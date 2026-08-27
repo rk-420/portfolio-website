@@ -9,7 +9,7 @@ export const skillCategories: SkillCategory[] = [
     skills: ["Excel", "PowerPoint", "Word", "Outlook"],
   },
   {
-    category: "Programmiersprachen",
+    category: "Programming Languages",
     skills: ["Python", "C++", "Java", "JavaScript", "SQL", "PHP"],
   },
   {
@@ -21,21 +21,21 @@ export const skillCategories: SkillCategory[] = [
     skills: ["Next.js", "React", "Flask", "FastAPI"],
   },
   {
-    category: "KI-gestützte Analyse",
+    category: "AI-Powered Analysis",
     skills: [
       "Python",
       "Pandas",
       "Scikit-learn",
-      "NLP/Sentiment-Analyse",
+      "NLP/Sentiment Analysis",
       "Generative AI",
     ],
   },
   {
-    category: "KI-Tools & Automatisierung",
+    category: "AI Tools & Automation",
     skills: ["ChatGPT", "Claude", "Cursor"],
   },
   {
-    category: "Datenbanken, APIs & Cloud",
+    category: "Databases, APIs & Cloud",
     skills: ["SQL", "REST-APIs", "Git", "GitHub", "Docker", "Vercel"],
   },
 ];
