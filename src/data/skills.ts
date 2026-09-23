@@ -1,27 +1,29 @@
+import type { Localized } from "@/i18n/config";
+
 export type SkillCategory = {
-  category: string;
+  category: Localized;
   skills: string[];
 };
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Office & Tools",
+    category: { en: "Office & Tools", de: "Office & Tools" },
     skills: ["Excel", "PowerPoint", "Word", "Outlook"],
   },
   {
-    category: "Programming Languages",
+    category: { en: "Programming Languages", de: "Programmiersprachen" },
     skills: ["Python", "C++", "Java", "JavaScript", "SQL", "PHP"],
   },
   {
-    category: "Web",
+    category: { en: "Web", de: "Web" },
     skills: ["HTML", "CSS", "REST-API", "JSON"],
   },
   {
-    category: "Frameworks & Tools",
+    category: { en: "Frameworks & Tools", de: "Frameworks & Tools" },
     skills: ["Next.js", "React", "Flask", "FastAPI"],
   },
   {
-    category: "AI-Powered Analysis",
+    category: { en: "AI-Powered Analysis", de: "KI-gestützte Analyse" },
     skills: [
       "Python",
       "Pandas",
@@ -31,11 +33,11 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    category: "AI Tools & Automation",
+    category: { en: "AI Tools & Automation", de: "KI-Tools & Automatisierung" },
     skills: ["ChatGPT", "Claude", "Cursor"],
   },
   {
-    category: "Databases, APIs & Cloud",
+    category: { en: "Databases, APIs & Cloud", de: "Datenbanken, APIs & Cloud" },
     skills: ["SQL", "REST-APIs", "Git", "GitHub", "Docker", "Vercel"],
   },
 ];

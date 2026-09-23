@@ -6,13 +6,17 @@ import {
   GitHubIcon,
   LinkedInIcon,
 } from "@/components/icons";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
-export default function Contact() {
+export default function Contact({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).contact;
+
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <div className="rounded-3xl border border-card-border bg-card p-8 shadow-sm shadow-black/5 sm:p-12">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground">Let&apos;s Connect</h2>
+          <h2 className="text-3xl font-bold tracking-tight text-foreground">{t.heading}</h2>
         </div>
 
         <div className="mx-auto mt-8 grid max-w-xl gap-3 sm:grid-cols-2">
@@ -32,7 +36,7 @@ export default function Contact() {
           </a>
           <span className="flex items-center gap-2.5 rounded-xl border border-card-border bg-background px-4 py-3 text-sm text-foreground/90">
             <LocationIcon className="h-4 w-4 shrink-0" />
-            {site.location}
+            {site.location[lang]}
           </span>
           <a
             href={site.linkedin}

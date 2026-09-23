@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { skillCategories } from "@/data/skills";
 import { ChevronDownIcon } from "@/components/icons";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
-export default function Skills() {
+export default function Skills({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).skills;
   const [openCategories, setOpenCategories] = useState<Set<string>>(
-    () => new Set([skillCategories[0]?.category])
+    () => new Set([skillCategories[0]?.category.en])
   );
 
   function toggle(category: string) {
@@ -23,26 +26,26 @@ export default function Skills() {
 
   return (
     <section id="skills" className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-      <h2 className="text-3xl font-bold tracking-tight text-foreground">Skills</h2>
+      <h2 className="text-3xl font-bold tracking-tight text-foreground">{t.heading}</h2>
       <p className="mt-2 max-w-2xl text-muted">
-        A snapshot of the tools and technologies I work with, grouped by area.
+        {t.intro}
       </p>
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {skillCategories.map(({ category, skills }) => {
-          const isOpen = openCategories.has(category);
+          const isOpen = openCategories.has(category.en);
           return (
             <div
-              key={category}
+              key={category.en}
               className="overflow-hidden rounded-2xl border border-card-border bg-card shadow-sm shadow-black/5"
             >
               <button
                 type="button"
-                onClick={() => toggle(category)}
+                onClick={() => toggle(category.en)}
                 className="flex w-full items-center justify-between px-6 py-5 text-left"
                 aria-expanded={isOpen}
               >
-                <span className="text-lg font-semibold text-foreground">{category}</span>
+                <span className="text-lg font-semibold text-foreground">{category[lang]}</span>
                 <ChevronDownIcon
                   className={`h-5 w-5 text-accent transition-transform duration-200 ${
                     isOpen ? "rotate-180" : ""

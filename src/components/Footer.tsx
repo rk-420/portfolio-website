@@ -1,14 +1,17 @@
 import { site } from "@/data/site";
 import { GitHubIcon, LinkedInIcon, MailIcon } from "@/components/icons";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
-export default function Footer() {
+export default function Footer({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).footer;
   const year = new Date().getFullYear();
 
   return (
     <footer className="border-t border-card-border/70 bg-background">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 py-8 text-sm text-muted sm:flex-row sm:justify-between">
         <p>
-          © {year} {site.name}. All rights reserved.
+          © {year} {site.name}. {t.rights}
         </p>
         <div className="flex items-center gap-4">
           <a

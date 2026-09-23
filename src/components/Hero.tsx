@@ -1,4 +1,6 @@
 import { site } from "@/data/site";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 import HeroPhoto from "@/components/HeroPhoto";
 import {
   GitHubIcon,
@@ -8,26 +10,27 @@ import {
   DownloadIcon,
 } from "@/components/icons";
 
-export default function Hero() {
+export default function Hero({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).hero;
+
   return (
     <section className="mx-auto max-w-6xl px-6 pt-16 pb-20 sm:pt-24">
       <div className="grid items-center gap-12 sm:grid-cols-[1.2fr_1fr]">
         <div>
           <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-accent">
-            Hi, I&apos;m
+            {t.greeting}
           </p>
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
             {site.name}
           </h1>
           <p className="mt-3 text-lg font-medium text-foreground/80 sm:text-xl">
-            Always curious, always learning — currently looking for a working student
-            position to grow my skills while contributing to real-world projects.
+            {t.intro}
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted">
             <span className="flex items-center gap-1.5">
               <LocationIcon className="h-4 w-4" />
-              {site.location}
+              {site.location[lang]}
             </span>
             <a
               href={`mailto:${site.email}`}
@@ -43,7 +46,7 @@ export default function Hero() {
               href="#projects"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition-transform hover:scale-[1.03] hover:shadow-md"
             >
-              View Projects
+              {t.viewProjects}
             </a>
             <a
               href={site.cvUrl}
@@ -51,7 +54,7 @@ export default function Hero() {
               className="flex items-center gap-2 rounded-full border border-card-border bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-sm transition-transform hover:scale-[1.03] hover:shadow-md"
             >
               <DownloadIcon className="h-4 w-4" />
-              Download CV
+              {t.downloadCv}
             </a>
 
             <div className="flex items-center gap-3 pl-1">
@@ -77,7 +80,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <HeroPhoto alt={`Photo of ${site.name}`} />
+        <HeroPhoto alt={`${t.photoAlt} ${site.name}`} uploadLabel={t.uploadPhoto} />
       </div>
     </section>
   );

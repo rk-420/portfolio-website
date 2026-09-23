@@ -1,4 +1,6 @@
 import { ExternalLinkIcon } from "@/components/icons";
+import type { Locale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
 const skills = [
   "Python",
@@ -18,17 +20,19 @@ const skills = [
   "Kubernetes",
 ];
 
-export default function CurrentFocus() {
+export default function CurrentFocus({ lang }: { lang: Locale }) {
+  const t = getDictionary(lang).focus;
+
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-accent">
-        Current Focus
+        {t.eyebrow}
       </p>
       <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Learning in Motion
+        {t.heading}
       </h2>
       <p className="mt-3 max-w-2xl text-muted">
-        A course I&apos;m actively working through to deepen my full-stack and AI/ML skills.
+        {t.intro}
       </p>
 
       <div className="mt-8 border-t border-card-border pt-8">
@@ -48,11 +52,7 @@ export default function CurrentFocus() {
                 <ExternalLinkIcon className="h-4 w-4 shrink-0" />
               </a>
               <p className="mt-2 max-w-xl text-sm text-muted">
-                An intensive online program from Apna College covering full-stack web
-                development alongside applied AI/ML — from core Python and deep learning
-                fundamentals to LLMs, RAG, and agentic AI systems. Working through it to
-                sharpen the skills behind the projects on this site and build
-                production-ready, AI-enhanced applications.
+                {t.courseDescription}
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {skills.map((skill) => (
@@ -69,10 +69,10 @@ export default function CurrentFocus() {
 
           <div className="flex shrink-0 flex-row gap-2 sm:flex-col sm:items-end">
             <span className="rounded-full border border-card-border bg-card px-4 py-1.5 text-sm font-medium text-foreground">
-              In progress
+              {t.inProgress}
             </span>
             <span className="rounded-full border border-card-border bg-card px-4 py-1.5 text-sm font-medium text-muted">
-              Est. Sept 2026
+              {t.estimated}
             </span>
           </div>
         </div>

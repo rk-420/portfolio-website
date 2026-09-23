@@ -1,15 +1,17 @@
+import type { Localized } from "@/i18n/config";
+
 export type Education = {
-  degree: string;
+  degree: Localized;
   institution: string;
-  location: string;
-  period: string;
+  location: Localized;
+  period: Localized;
 };
 
 export const education: Education[] = [
   {
-    degree: "B.Sc. in Informatik",
+    degree: { en: "B.Sc. in Informatik", de: "B.Sc. Informatik" },
     institution: "Hochschule Darmstadt",
-    location: "Darmstadt, Germany",
-    period: "Nov 2021 – Present",
+    location: { en: "Darmstadt, Germany", de: "Darmstadt, Deutschland" },
+    period: { en: "Nov 2021 – Present", de: "Nov. 2021 – heute" },
   },
 ];

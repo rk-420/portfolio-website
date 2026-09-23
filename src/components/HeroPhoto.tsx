@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 
-export default function HeroPhoto({ alt }: { alt: string }) {
+export default function HeroPhoto({ alt, uploadLabel }: { alt: string; uploadLabel: string }) {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -27,7 +27,7 @@ export default function HeroPhoto({ alt }: { alt: string }) {
       <button
         type="button"
         onClick={() => inputRef.current?.click()}
-        aria-label="Upload photo"
+        aria-label={uploadLabel}
         className="block aspect-square w-full overflow-hidden rounded-3xl border border-card-border bg-card shadow-lg shadow-black/5"
       >
         {previewUrl ? (
