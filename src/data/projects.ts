@@ -11,7 +11,7 @@ export const projects: Project[] = [
     title: "EduMed — Medical Dashboard",
     description:
       "Full-stack dashboard for general practitioners: patient management, an interactive 2D body model for clinical annotations, a live BMI calculator, and an appointment schedule, backed by serverless API functions and JWT auth.",
-    image: "/images/projects/edumed.jpg",
+    image: "/images/projects/edumed-dashboard.jpg",
     tech: ["React", "Vite", "Tailwind CSS", "Node.js", "PostgreSQL (Neon)", "Vercel Functions", "JWT"],
     link: "https://github.com/rk-420/edumed",
   },
