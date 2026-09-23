@@ -27,6 +27,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       "Python",
       "Pandas",
+      "NumPy",
       "Scikit-learn",
       "NLP/Sentiment Analysis",
       "Generative AI",
