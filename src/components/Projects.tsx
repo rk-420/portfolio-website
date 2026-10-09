@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { projects } from "@/data/projects";
-import { ExternalLinkIcon } from "@/components/icons";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -23,12 +22,9 @@ export default function Projects({ lang }: { lang: Locale }) {
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
         {visibleProjects.map((project) => (
-          <a
-            key={project.link + project.title.en}
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="group flex flex-col overflow-hidden rounded-2xl border border-card-border bg-card shadow-sm shadow-black/5 transition-transform hover:-translate-y-1 hover:shadow-lg"
+          <article
+            key={project.title.en}
+            className="group flex flex-col overflow-hidden rounded-2xl border border-card-border bg-card shadow-sm shadow-black/5"
           >
             <div className="relative aspect-[8/5] w-full overflow-hidden">
               <Image
@@ -39,10 +35,7 @@ export default function Projects({ lang }: { lang: Locale }) {
               />
             </div>
             <div className="flex flex-1 flex-col gap-3 p-6">
-              <div className="flex items-start justify-between gap-3">
-                <h3 className="text-lg font-semibold text-foreground">{project.title[lang]}</h3>
-                <ExternalLinkIcon className="h-5 w-5 shrink-0 text-muted transition-colors group-hover:text-accent" />
-              </div>
+              <h3 className="text-lg font-semibold text-foreground">{project.title[lang]}</h3>
               <p className="text-sm text-muted">{project.description[lang]}</p>
               <div className="mt-auto flex flex-wrap gap-2 pt-2">
                 {project.tech.map((tech) => (
@@ -55,7 +48,7 @@ export default function Projects({ lang }: { lang: Locale }) {
                 ))}
               </div>
             </div>
-          </a>
+          </article>
         ))}
       </div>
 

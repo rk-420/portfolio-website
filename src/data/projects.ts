@@ -5,7 +5,6 @@ export type Project = {
   description: Localized;
   image: string;
   tech: string[];
-  link: string;
 };
 
 export const projects: Project[] = [
@@ -17,7 +16,6 @@ export const projects: Project[] = [
     },
     image: "/images/projects/edumed-dashboard.jpg",
     tech: ["React", "Vite", "Tailwind CSS", "Node.js", "PostgreSQL (Neon)", "Vercel Functions", "JWT"],
-    link: "https://github.com/rk-420/edumed",
   },
   {
     title: { en: "Pizza Order Webapp", de: "Pizza-Bestell-Webapp" },
@@ -27,7 +25,6 @@ export const projects: Project[] = [
     },
     image: "/images/projects/pizza-order-webapp.jpg",
     tech: ["PHP 8", "MariaDB/MySQL", "Docker", "Apache", "Vanilla JavaScript"],
-    link: "https://github.com/rk-420/pizza-order-webapp",
   },
   {
     title: { en: "AI Finance Analysis Platform", de: "KI-Plattform für Finanzanalysen" },
@@ -37,7 +34,6 @@ export const projects: Project[] = [
     },
     image: "/images/projects/ai-finance-platform.svg",
     tech: ["Python", "Flask", "REST API", "NLTK", "Scikit-learn", "SQLite/PostgreSQL"],
-    link: "https://github.com/rk-420",
   },
   {
     title: { en: "ProRunVis — Debugging & Visualization Tool", de: "ProRunVis — Debugging- & Visualisierungstool" },
@@ -47,6 +43,5 @@ export const projects: Project[] = [
     },
     image: "/images/projects/prorunvis-debugger.svg",
     tech: ["Java", "JBMC", "Git", "Scrum/Kanban"],
-    link: "https://github.com/rk-420",
   },
 ];
