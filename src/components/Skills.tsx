@@ -60,14 +60,17 @@ export default function Skills({ lang }: { lang: Locale }) {
               >
                 <div className="overflow-hidden">
                   <div className="flex flex-wrap gap-2 px-6 pb-6">
-                    {skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="rounded-full bg-accent-soft px-3 py-1.5 text-sm font-medium text-accent"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    {skills.map((skill) => {
+                      const label = typeof skill === "string" ? skill : skill[lang];
+                      return (
+                        <span
+                          key={label}
+                          className="rounded-full bg-accent-soft px-3 py-1.5 text-sm font-medium text-accent"
+                        >
+                          {label}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

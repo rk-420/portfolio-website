@@ -1,44 +1,46 @@
 import type { Localized } from "@/i18n/config";
 
+export type Skill = string | Localized;
+
 export type SkillCategory = {
   category: Localized;
-  skills: string[];
+  skills: Skill[];
 };
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: { en: "Office & Tools", de: "Office & Tools" },
-    skills: ["Excel", "PowerPoint", "Word", "Outlook"],
-  },
-  {
     category: { en: "Programming Languages", de: "Programmiersprachen" },
-    skills: ["Python", "C++", "Java", "JavaScript", "SQL", "PHP"],
+    skills: ["Java", "Python", "JavaScript", "TypeScript", "PHP", "SQL"],
   },
   {
-    category: { en: "Web", de: "Web" },
-    skills: ["HTML", "CSS", "REST-API", "JSON"],
+    category: { en: "Web Development", de: "Webentwicklung" },
+    skills: ["React", "Next.js", "Node.js", "Flask", "FastAPI", "HTML", "CSS", "Tailwind CSS"],
   },
   {
-    category: { en: "Frameworks & Tools", de: "Frameworks & Tools" },
-    skills: ["Next.js", "React", "Flask", "FastAPI"],
-  },
-  {
-    category: { en: "AI-Powered Analysis", de: "KI-gestützte Analyse" },
+    category: { en: "Tools & DevOps", de: "Tools & DevOps" },
     skills: [
-      "Python",
-      "Pandas",
-      "NumPy",
-      "Scikit-learn",
-      "NLP/Sentiment Analysis",
-      "Generative AI",
+      "Git (GitHub, GitLab)",
+      "Docker",
+      "REST-APIs",
+      "CI/CD",
+      "Vercel",
+      { en: "AWS (basics)", de: "AWS (Grundlagen)" },
     ],
   },
   {
-    category: { en: "AI Tools & Automation", de: "KI-Tools & Automatisierung" },
-    skills: ["ChatGPT", "Claude", "Cursor"],
+    category: { en: "Data Analysis & Visualization", de: "Datenanalyse & Visualisierung" },
+    skills: [
+      "NumPy",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Web Scraping (Requests, BeautifulSoup)",
+      { en: "Data collection via APIs", de: "Datensammlung über APIs" },
+      { en: "Data cleaning", de: "Datenbereinigung" },
+    ],
   },
   {
-    category: { en: "Databases, APIs & Cloud", de: "Datenbanken, APIs & Cloud" },
-    skills: ["SQL", "REST-APIs", "Git", "GitHub", "Docker", "Vercel"],
+    category: { en: "Databases", de: "Datenbanken" },
+    skills: ["MySQL/MariaDB", "MongoDB"],
   },
 ];
