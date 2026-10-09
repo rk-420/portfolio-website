@@ -44,7 +44,6 @@ const en = {
     courseDescription:
       "An intensive online program from Apna College covering full-stack web development alongside applied AI/ML — from core Python and deep learning fundamentals to LLMs, RAG, and agentic AI systems. Working through it to sharpen the skills behind the projects on this site and build production-ready, AI-enhanced applications.",
     inProgress: "In progress",
-    estimated: "Est. Sept 2026",
   },
   languages: {
     eyebrow: "Languages",
@@ -112,7 +111,6 @@ const de: Dictionary = {
     courseDescription:
       "Ein intensives Online-Programm von Apna College, das Full-Stack-Webentwicklung und angewandte KI/ML verbindet — von Python-Grundlagen und Deep Learning bis zu LLMs, RAG und agentenbasierten KI-Systemen. Damit schärfe ich die Fähigkeiten hinter den Projekten auf dieser Seite und lerne, produktionsreife, KI-gestützte Anwendungen zu bauen.",
     inProgress: "In Bearbeitung",
-    estimated: "Voraussichtlich Sept. 2026",
   },
   languages: {
     eyebrow: "Sprachen",

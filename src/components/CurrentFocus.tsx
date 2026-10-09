@@ -71,9 +71,6 @@ export default function CurrentFocus({ lang }: { lang: Locale }) {
             <span className="rounded-full border border-card-border bg-card px-4 py-1.5 text-sm font-medium text-foreground">
               {t.inProgress}
             </span>
-            <span className="rounded-full border border-card-border bg-card px-4 py-1.5 text-sm font-medium text-muted">
-              {t.estimated}
-            </span>
           </div>
         </div>
       </div>
