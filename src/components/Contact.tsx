@@ -3,7 +3,6 @@ import {
   MailIcon,
   PhoneIcon,
   LocationIcon,
-  GitHubIcon,
   LinkedInIcon,
 } from "@/components/icons";
 import type { Locale } from "@/i18n/config";
@@ -46,15 +45,6 @@ export default function Contact({ lang }: { lang: Locale }) {
           >
             <LinkedInIcon className="h-4 w-4 shrink-0" />
             LinkedIn
-          </a>
-          <a
-            href={site.github}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2.5 rounded-xl border border-card-border bg-background px-4 py-3 text-sm text-foreground/90 transition-colors hover:border-accent hover:text-accent sm:col-span-2"
-          >
-            <GitHubIcon className="h-4 w-4 shrink-0" />
-            {site.github.replace("https://", "")}
           </a>
         </div>
       </div>
